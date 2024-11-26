@@ -1,0 +1,82 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ProductCard from '../components/ProductCard';
+import PartnersSection from '../components/sections/PartnersSection.astro';
+
+const featuredProducts = [
+  {
+    name: "Herbicida Premium",
+    description: "Control efectivo de malezas para cultivos extensivos",
+    image: "/images/herbicide.jpg"
+  },
+  {
+    name: "Fertilizante NPK",
+    description: "Fórmula balanceada para óptimo crecimiento",
+    image: "/images/fertilizer.jpg"
+  },
+  {
+    name: "Insecticida Bio",
+    description: "Protección natural contra plagas",
+    image: "/images/insecticide.jpg"
+  }
+];
+---
+
+<Layout title="AgroQuímicos Pro - Inicio">
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-b from-primary/10 to-white">
+    <div class="container mx-auto px-4 py-20 text-center">
+      <h1 class="text-5xl font-bold text-primary mb-6">
+        Soluciones Agrícolas de Calidad
+      </h1>
+      <p class="text-xl text-gray-600 mb-8">
+        Productos profesionales para optimizar sus cultivos de manera sostenible
+      </p>
+      <a
+        href="/productos"
+        class="bg-secondary text-white px-8 py-3 rounded-lg text-lg hover:bg-primary transition-colors"
+      >
+        Ver Productos
+      </a>
+    </div>
+  </section>
+
+  <!-- Featured Products -->
+  <section class="py-16">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center text-primary mb-12">Productos Destacados</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {featuredProducts.map((product) => (
+          <ProductCard {...product} />
+        ))}
+      </div>
+      <div class="text-center mt-8">
+        <a href="/productos" class="text-primary hover:text-secondary font-semibold">
+          Ver todos los productos →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <PartnersSection />
+
+  <!-- Features Section -->
+  <section class="py-16 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="text-center">
+          <h3 class="text-xl font-bold text-primary mb-4">Calidad Garantizada</h3>
+          <p class="text-gray-600">Productos certificados de alta eficacia</p>
+        </div>
+        <div class="text-center">
+          <h3 class="text-xl font-bold text-primary mb-4">Asesoría Técnica</h3>
+          <p class="text-gray-600">Equipo de expertos a su disposición</p>
+        </div>
+        <div class="text-center">
+          <h3 class="text-xl font-bold text-primary mb-4">Envío Rápido</h3>
+          <p class="text-gray-600">Entrega en todo el país</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

@@ -1,0 +1,171 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ProductCard from '../components/ProductCard';
+
+const productCategories = [
+  {
+    title: "Fertilizantes",
+    products: [
+      {
+        name: "Insecticidas",
+        description: "Control efectivo de plagas para diversos cultivos",
+        image: "/images/insecticide.jpg"
+      },
+      {
+        name: "Herbicidas",
+        description: "Eliminación y control de malezas",
+        image: "/images/herbicide.jpg"
+      },
+      {
+        name: "Fungicidas",
+        description: "Protección contra enfermedades fúngicas",
+        image: "/images/fungicide.jpg"
+      },
+      {
+        name: "Acaricidas",
+        description: "Control especializado de ácaros",
+        image: "/images/acaricide.jpg"
+      },
+      {
+        name: "Regulador de crecimiento",
+        description: "Optimización del desarrollo vegetal",
+        image: "/images/growth.jpg"
+      },
+      {
+        name: "Molusquicidas",
+        description: "Control efectivo de moluscos",
+        image: "/images/molluscicide.jpg"
+      },
+      {
+        name: "Nematicidas",
+        description: "Protección contra nematodos",
+        image: "/images/nematicide.jpg"
+      },
+      {
+        name: "Equipo de Pulverización",
+        description: "Herramientas profesionales para aplicación",
+        image: "/images/equipment.jpg"
+      }
+    ]
+  },
+  {
+    title: "Bienestar Vegetal",
+    products: [
+      {
+        name: "Coadyuvantes y Surfactantes",
+        description: "Mejora la eficacia de los tratamientos",
+        image: "/images/surfactant.jpg"
+      },
+      {
+        name: "Protección Vegetal",
+        description: "Soluciones integrales para cultivos",
+        image: "/images/protection.jpg"
+      },
+      {
+        name: "Enmiendas y fertilizantes de suelo",
+        description: "Mejora de la calidad del suelo",
+        image: "/images/soil.jpg"
+      },
+      {
+        name: "Biopesticidas",
+        description: "Control natural de plagas",
+        image: "/images/biopesticide.jpg"
+      },
+      {
+        name: "Bioestimulantes",
+        description: "Potenciadores naturales del crecimiento",
+        image: "/images/biostimulant.jpg"
+      },
+      {
+        name: "Fertilizantes Foliares",
+        description: "Nutrición directa a través de las hojas",
+        image: "/images/foliar.jpg"
+      }
+    ]
+  },
+  {
+    title: "Semillas",
+    products: [
+      {
+        name: "Hortalizas",
+        description: "Semillas seleccionadas de alta calidad",
+        image: "/images/vegetables.jpg"
+      },
+      {
+        name: "Forrajeras",
+        description: "Variedades óptimas para forraje",
+        image: "/images/forage.jpg"
+      },
+      {
+        name: "Maíz",
+        description: "Semillas certificadas de maíz",
+        image: "/images/corn.jpg"
+      }
+    ]
+  },
+  {
+    title: "Ambientales",
+    products: [
+      {
+        name: "Insecticidas Pest Control",
+        description: "Control de plagas ambiental",
+        image: "/images/pestcontrol.jpg"
+      },
+      {
+        name: "Fertilizantes",
+        description: "Nutrición completa para plantas",
+        image: "/images/fertilizer.jpg"
+      },
+      {
+        name: "Urea",
+        description: "Fertilizante nitrogenado esencial",
+        image: "/images/urea.jpg"
+      }
+    ]
+  }
+];
+---
+
+<Layout title="Agrícola Gutarra - Productos">
+  <div class="container mx-auto px-4 py-12">
+    <h1 class="text-4xl font-bold text-primary text-center mb-12">Nuestros Productos</h1>
+    
+    {productCategories.map((category) => (
+      <section class="mb-16">
+        <h2 class="text-2xl font-bold text-primary mb-8">{category.title}</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {category.products.map((product) => (
+            <ProductCard {...product} />
+          ))}
+        </div>
+      </section>
+    ))}
+
+    <!-- Servicios Section -->
+    <section class="mt-16 bg-white p-8 rounded-lg shadow-md">
+      <h2 class="text-2xl font-bold text-primary mb-6">Nuestros Servicios</h2>
+      <div class="prose max-w-none text-gray-600">
+        <p class="mb-4">
+          Agrícola Gutarra ofrece el servicio de asesoría constante para todos sus clientes. 
+          El ingeniero se encarga personalmente de ver el estado de los sembríos de sus clientes.
+        </p>
+        <h3 class="text-xl font-semibold text-primary mt-6 mb-4">Mercado</h3>
+        <p class="mb-4">
+          Ofrecemos nuestros productos y servicios con una amplia categoría y subcategorías 
+          de productos de necesidad para los agricultores en toda la provincia de Huancayo, 
+          en especial a los agricultores del distrito de Sicaya.
+        </p>
+        <h3 class="text-xl font-semibold text-primary mt-6 mb-4">Clientes</h3>
+        <p class="mb-4">
+          Nuestros productos y servicios están dirigidos a todos los hermanos campesinos y 
+          agricultores, de cualquier sexo, edad, de todos los niveles socio económicos, 
+          este último debido a nuestra gran variedad de precios.
+        </p>
+        <h3 class="text-xl font-semibold text-primary mt-6 mb-4">Certificaciones</h3>
+        <p>
+          Contamos con la certificación del Servicio Nacional de Sanidad Agraria (SENASA) del Perú.
+        </p>
+      </div>
+    </section>
+  </div>
+</Layout>

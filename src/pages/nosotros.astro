@@ -1,0 +1,95 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const values = [
+  {
+    title: "Orientación al cliente",
+    description: "Nos enfocamos en entender y satisfacer las necesidades específicas de cada agricultor."
+  },
+  {
+    title: "Calidad",
+    description: "Garantizamos productos y servicios que cumplen con los más altos estándares."
+  },
+  {
+    title: "Innovación",
+    description: "Buscamos constantemente nuevas soluciones para mejorar la agricultura."
+  },
+  {
+    title: "Excelencia",
+    description: "Nos esforzamos por superar las expectativas en todo lo que hacemos."
+  },
+  {
+    title: "Respeto",
+    description: "Valoramos a nuestros clientes, colaboradores y el medio ambiente."
+  },
+  {
+    title: "Trabajo en equipo",
+    description: "Colaboramos para lograr los mejores resultados para nuestros clientes."
+  }
+];
+
+const companyInfo = {
+  mission: "Proporcionar soluciones agrícolas innovadoras y sostenibles que mejoren la productividad de nuestros clientes mientras protegemos el medio ambiente.",
+  vision: "Ser líderes en el sector agroquímico en la región de Huancayo, reconocidos por nuestra excelencia en productos, servicio al cliente y compromiso con la agricultura sostenible."
+};
+---
+
+<Layout title="Agrícola Gutarra - Nosotros">
+  <div class="container mx-auto px-4 py-12">
+    <h1 class="text-4xl font-bold text-primary text-center mb-12">Sobre Nosotros</h1>
+    
+    <!-- Misión -->
+    <section class="mb-16">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="text-2xl font-bold text-primary mb-4">Nuestra Misión</h2>
+        <div class="bg-white p-6 rounded-lg shadow-md">
+          <p class="text-gray-600">{companyInfo.mission}</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Visión -->
+    <section class="mb-16">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="text-2xl font-bold text-primary mb-4">Nuestra Visión</h2>
+        <div class="bg-white p-6 rounded-lg shadow-md">
+          <p class="text-gray-600">{companyInfo.vision}</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Valores -->
+    <section class="mb-16">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-2xl font-bold text-primary mb-8">Nuestros Valores</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {values.map((value) => (
+            <div class="bg-white p-6 rounded-lg shadow-md">
+              <h3 class="text-xl font-semibold text-primary mb-2">{value.title}</h3>
+              <p class="text-gray-600">{value.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Certificaciones -->
+    <section class="mb-16">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="text-2xl font-bold text-primary mb-4">Certificaciones</h2>
+        <div class="bg-white p-6 rounded-lg shadow-md">
+          <div class="flex items-center space-x-4">
+            <img src="/images/senasa-logo.png" alt="SENASA" class="h-16"/>
+            <div>
+              <h3 class="text-xl font-semibold text-primary mb-2">Certificación SENASA</h3>
+              <p class="text-gray-600">
+                Contamos con la certificación del Servicio Nacional de Sanidad Agraria (SENASA) del Perú,
+                garantizando la calidad y seguridad de nuestros productos y servicios.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</Layout>

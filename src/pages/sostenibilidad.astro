@@ -1,0 +1,82 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SustainabilityCard from '../components/SustainabilityCard';
+
+const sustainabilityPillars = [
+  {
+    title: "Reducir Impacto Ambiental",
+    description: "Implementamos prácticas y productos que minimizan la huella ambiental en la agricultura, protegiendo los ecosistemas y la biodiversidad.",
+    icon: "🌱"
+  },
+  {
+    title: "Contener Costos de Siembra",
+    description: "Desarrollamos soluciones eficientes que optimizan recursos y maximizan el rendimiento de la inversión para nuestros agricultores.",
+    icon: "💰"
+  },
+  {
+    title: "Mejora en Calidad",
+    description: "Garantizamos cultivos más saludables y alimentos de mejor calidad a través de productos innovadores y prácticas sostenibles.",
+    icon: "✨"
+  }
+];
+
+const sustainabilityInitiatives = [
+  {
+    title: "Agricultura de Precisión",
+    description: "Tecnologías y métodos que optimizan el uso de recursos agrícolas.",
+    icon: "🎯"
+  },
+  {
+    title: "Productos Biodegradables",
+    description: "Desarrollo de soluciones que se degradan naturalmente sin dañar el medio ambiente.",
+    icon: "♻️"
+  },
+  {
+    title: "Capacitación Continua",
+    description: "Programas de formación en prácticas agrícolas sostenibles para agricultores.",
+    icon: "📚"
+  }
+];
+---
+
+<Layout title="AgroQuímicos Pro - Sostenibilidad">
+  <div class="container mx-auto px-4 py-12">
+    <h1 class="text-4xl font-bold text-primary text-center mb-12">Compromiso con la Sostenibilidad</h1>
+
+    <!-- Pilares de Sostenibilidad -->
+    <section class="mb-16">
+      <h2 class="text-2xl font-bold text-primary mb-8">Pilares Fundamentales</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {sustainabilityPillars.map((pillar) => (
+          <SustainabilityCard {...pillar} />
+        ))}
+      </div>
+    </section>
+
+    <!-- Iniciativas -->
+    <section class="mb-16">
+      <h2 class="text-2xl font-bold text-primary mb-8">Nuestras Iniciativas</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {sustainabilityInitiatives.map((initiative) => (
+          <SustainabilityCard {...initiative} />
+        ))}
+      </div>
+    </section>
+
+    <!-- Compromiso Ambiental -->
+    <section class="bg-white p-8 rounded-lg shadow-md">
+      <h2 class="text-2xl font-bold text-primary mb-4">Nuestro Compromiso Ambiental</h2>
+      <p class="text-gray-600 mb-4">
+        En AgroQuímicos Pro, la sostenibilidad es parte fundamental de nuestra misión. 
+        Trabajamos constantemente para desarrollar productos y soluciones que no solo mejoren 
+        la productividad agrícola, sino que también protejan nuestro planeta para las 
+        generaciones futuras.
+      </p>
+      <p class="text-gray-600">
+        Nuestro enfoque integral combina innovación tecnológica con responsabilidad 
+        ambiental, asegurando que cada producto y práctica contribuya a una agricultura 
+        más sostenible y eficiente.
+      </p>
+    </section>
+  </div>
+</Layout>

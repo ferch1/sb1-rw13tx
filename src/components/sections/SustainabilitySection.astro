@@ -1,0 +1,32 @@
+---
+import SustainabilityCard from '../SustainabilityCard';
+
+const sustainabilityItems = [
+  {
+    title: "Reducir Impacto Ambiental",
+    description: "Comprometidos con prácticas agrícolas sostenibles que minimizan el impacto en el medio ambiente.",
+    icon: "🌱"
+  },
+  {
+    title: "Contener Costos de Siembra",
+    description: "Soluciones eficientes que optimizan recursos y maximizan el rendimiento de la inversión.",
+    icon: "💰"
+  },
+  {
+    title: "Mejora en Calidad",
+    description: "Productos que garantizan cultivos más saludables y alimentos de mejor calidad.",
+    icon: "✨"
+  }
+];
+---
+
+<section id="sostenibilidad" class="py-16 bg-gray-50">
+  <div class="container mx-auto px-4">
+    <h2 class="text-3xl font-bold text-center text-primary mb-12">Sostenibilidad</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      {sustainabilityItems.map((item) => (
+        <SustainabilityCard {...item} />
+      ))}
+    </div>
+  </div>
+</section>
